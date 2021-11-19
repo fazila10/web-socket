@@ -1,0 +1,43 @@
+<html>
+<head>
+  <title>Chat WebSocket</title>
+  <script src="/webjars/jquery/jquery.min.js"></script>
+  <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+  <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+  <script src="/app.js"></script>
+</head>
+
+<body onload="disconnect()">
+<div>
+  <div>
+    <input type="text" id="from" placeholder="Choose a nickname"/>
+  </div>
+  <br />
+  <div>
+    <button id="connect" onclick="connect();">Connect</button>
+    <button id="disconnect" disabled="disabled" onclick="disconnect();">
+      Disconnect
+    </button>
+  </div>
+  <br />
+  <div id="conversationDiv">
+    <input type="text" id="text" placeholder="Write a message..."/>
+    <button id="sendMessage" onclick="sendMessage();">Send</button>
+    <p id="response"></p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <table id="conversation" class="table table-striped">
+      <thead>
+      <tr>
+        <th>Messages</th>
+      </tr>
+      </thead>
+      <tbody id="messages">
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>
